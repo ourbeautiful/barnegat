@@ -1,0 +1,18 @@
+org_name: "Our Beautiful America"
+chapter_name: "Our Beautiful Barnegat"
+chapter_status: "Founding Chapter"
+tagline: "Civic pride. Love of nature. Young leadership."
+phone: "347-265-0166"
+phone_link: "+13472650166"
+email: "ourbeautifulbarnegat@gmail.com"
+location: "Barnegat, New Jersey"
+
+nav:
+  - label: "About"
+    url: "/about/"
+  - label: "Get Involved"
+    url: "/get-involved/"
+  - label: "Updates"
+    url: "/updates/"
+  - label: "Contact"
+    url: "/contact/"

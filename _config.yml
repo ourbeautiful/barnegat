@@ -1,0 +1,36 @@
+title: "Our Beautiful America — Our Beautiful Barnegat"
+description: "Civic pride. Love of nature. Young leadership. The founding chapter of Our Beautiful America."
+
+# IMPORTANT: update these two once your GitHub Pages URL is known.
+# Example for a project site: url: "https://yourusername.github.io", baseurl: "/oba-barnegat"
+# Example for a custom domain: url: "https://ourbeautifulbarnegat.org", baseurl: ""
+url: "https://yourusername.github.io"
+baseurl: "/oba-barnegat"
+
+markdown: kramdown
+permalink: pretty
+
+collections:
+  updates:
+    output: true
+    permalink: /updates/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "updates"
+    values:
+      layout: "update"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

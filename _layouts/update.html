@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article class="section">
+  <div class="container" style="max-width: 760px;">
+    <a class="back-link" href="{{ '/updates/' | relative_url }}">&larr; All updates</a>
+    <p class="eyebrow">{{ page.date | date: "%B %-d, %Y" }}{% if page.category %} · {{ page.category }}{% endif %}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.image %}
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' }}" style="border-radius: var(--radius-lg); margin: 1.5rem 0;">
+    {% endif %}
+    <div style="font-size: 1.08rem; max-width: 68ch;">
+      {{ content }}
+    </div>
+  </div>
+</article>

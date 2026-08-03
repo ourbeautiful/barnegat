@@ -1,0 +1,45 @@
+---
+layout: default
+title: "Contact"
+description: "Reach Our Beautiful Barnegat by phone or email."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h1>Say hello</h1>
+    <p>Questions about the chapter, the mission, or becoming a founding trustee &mdash; reach out any time.</p>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="container">
+    <div class="grid grid-2">
+      <a class="card card-tint-a" href="tel:{{ site.data.site.phone_link }}" style="text-decoration:none;">
+        <div class="icon-roundel" aria-hidden="true">{% include icons/phone.svg %}</div>
+        <h3>Call or text</h3>
+        <p style="color: var(--forest); font-weight:700; font-size:1.15rem;">{{ site.data.site.phone }}</p>
+      </a>
+      <a class="card card-tint-c" href="mailto:{{ site.data.site.email }}" style="text-decoration:none;">
+        <div class="icon-roundel roundel-cream" aria-hidden="true">{% include icons/mail.svg %}</div>
+        <h3>Email</h3>
+        <p style="color: var(--forest); font-weight:700; font-size:1.15rem; word-break: break-word;">{{ site.data.site.email }}</p>
+      </a>
+    </div>
+
+    <div class="card card-sage" style="margin-top: var(--gap);">
+      <h3>Where we're based</h3>
+      <p>Our Beautiful Barnegat serves Barnegat Township and the surrounding Pinelands and Barnegat Bay area in Ocean County, New Jersey.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section on-dark cta-band reveal">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Want to do more than say hello?</p>
+      <h2>We're recruiting our three founding trustees right now.</h2>
+    </div>
+    <a class="btn btn-gold" href="{{ '/get-involved/' | relative_url }}">Become a founding trustee</a>
+  </div>
+</section>

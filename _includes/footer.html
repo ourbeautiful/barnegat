@@ -1,0 +1,41 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="{{ '/assets/img/leaf-mark.svg' | relative_url }}" alt="" aria-hidden="true">
+          {{ site.data.site.org_name }} · {{ site.data.site.chapter_name }}
+        </div>
+        <p style="margin-top:0.6rem; max-width:34ch;">{{ site.data.site.tagline }}</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          {% for item in site.data.site.nav %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-meta">
+      <span>&copy; {{ 'now' | date: "%Y" }} {{ site.data.site.org_name }} — {{ site.data.site.chapter_name }}. A founding chapter currently forming its board.</span>
+      <span><a href="tel:{{ site.data.site.phone_link }}" style="color:inherit;">{{ site.data.site.phone }}</a> · <a href="mailto:{{ site.data.site.email }}" style="color:inherit;">{{ site.data.site.email }}</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Progressive scroll reveal, respects prefers-reduced-motion via CSS fallback above.
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>

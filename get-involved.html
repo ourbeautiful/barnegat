@@ -1,0 +1,142 @@
+---
+layout: default
+title: "Get Involved"
+description: "Become one of our three founding trustees. A light time commitment, real impact from day one."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Why We Need You</p>
+    <h1>Three founding trustees needed</h1>
+    <p>Every nonprofit starts with a small founding board &mdash; people willing to lend their name, their wisdom, and a bit of time to help something good get off the ground. OBA and Our Beautiful Barnegat are ready to become official. We just need three people to help us take that first step.</p>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="container table-signature">
+    <div class="table-visual">
+      {% include svg-table.html %}
+      <div class="seat-legend">
+        <span class="seat-caption"><span class="dot filled" aria-hidden="true"></span> Founder's seat &mdash; filled</span>
+        <span class="seat-caption"><span class="dot open" aria-hidden="true"></span> Open trustee seat &mdash; could be yours</span>
+      </div>
+    </div>
+    <div>
+      <div class="stat-num">3</div>
+      <h2 style="margin-top:0.2rem;">Seats still open at the table</h2>
+      <p>You don't need prior nonprofit experience &mdash; just a willingness to lend your name, your judgment, and a little time to something that's just getting started.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section on-cream reveal">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">What It Looks Like</p>
+      <h2>A real role, without the full-time weight</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card card-tint-a">
+        <div class="icon-roundel" aria-hidden="true">{% include icons/calendar.svg %}</div>
+        <h3>Light Time Commitment</h3>
+        <p>A few meetings a year &mdash; not a full-time job.</p>
+      </div>
+      <div class="card card-tint-b">
+        <div class="icon-roundel roundel-bay" aria-hidden="true">{% include icons/idea.svg %}</div>
+        <h3>Share Your Wisdom</h3>
+        <p>Help guide big decisions using experience you already have.</p>
+      </div>
+      <div class="card card-tint-c">
+        <div class="icon-roundel roundel-cream" aria-hidden="true">{% include icons/heart.svg %}</div>
+        <h3>Real Impact, Day One</h3>
+        <p>Be part of something meaningful from the very start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="container" style="max-width:760px;">
+    <div class="section-head">
+      <p class="eyebrow">What We're Building Toward</p>
+      <h2>A community young people help lead</h2>
+    </div>
+    <ul class="checklist">
+      <li>{% include icons/check.svg %} Local parks and forests getting the attention they deserve</li>
+      <li>{% include icons/check.svg %} Youth-led programs rooted right here in Barnegat</li>
+      <li>{% include icons/check.svg %} A community where young people help lead, not just watch</li>
+    </ul>
+    <p class="fine-print">May increase property value.</p>
+  </div>
+</section>
+
+<!-- ===================== APPLICATION FORM ===================== -->
+<section class="section on-sage reveal" id="apply">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Become a Founding Trustee</p>
+      <h2>Tell us a little about yourself</h2>
+      <p>Fill this out and it'll open a pre-filled email to {{ site.data.site.email }} &mdash; or just call or email us directly below.</p>
+    </div>
+
+    <form class="form-grid" id="trusteeForm" action="#" method="post">
+      <div class="form-row">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone <span class="form-note">(optional)</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel">
+      </div>
+      <div class="form-row">
+        <label for="message">Why does this matter to you?</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <div>
+        <button class="btn btn-gold" type="submit">Send my interest</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  // No-backend form: builds a pre-filled mailto so submissions land directly
+  // in the chapter inbox. Swap for Netlify Forms / Formspree later if you'd
+  // like submissions to land in a dashboard instead of email.
+  (function () {
+    var form = document.getElementById('trusteeForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = encodeURIComponent(document.getElementById('name').value);
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var message = document.getElementById('message').value;
+      var body = encodeURIComponent(
+        'Name: ' + document.getElementById('name').value + '\n' +
+        'Email: ' + email + '\n' +
+        'Phone: ' + (phone || 'n/a') + '\n\n' +
+        message
+      );
+      window.location.href = 'mailto:{{ site.data.site.email }}?subject=' + encodeURIComponent('Founding Trustee Interest: ' + document.getElementById('name').value) + '&body=' + body;
+    });
+  })();
+</script>
+
+<section class="section on-dark cta-band reveal">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Prefer to reach out directly?</p>
+      <h2>Help us build something Barnegat &mdash; and the next generation &mdash; can be proud of.</h2>
+    </div>
+    <p class="contact-line">
+      <a href="tel:{{ site.data.site.phone_link }}">{{ site.data.site.phone }}</a>
+      <span class="or">or</span>
+      <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>
+    </p>
+  </div>
+</section>

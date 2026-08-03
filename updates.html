@@ -1,0 +1,43 @@
+---
+layout: default
+title: "Updates"
+description: "News, events, and milestones from Our Beautiful Barnegat."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Updates</p>
+    <h1>News &amp; milestones</h1>
+    <p>Announcements, events, and stories from Our Beautiful Barnegat, as the chapter comes to life.</p>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="container" style="max-width: 800px;">
+    {% assign updates = site.updates | sort: 'date' | reverse %}
+    {% if updates.size > 0 %}
+    <div class="updates-list">
+      {% for post in updates %}
+      <a class="update-card" href="{{ post.url | relative_url }}">
+        <div>
+          <div class="update-date">{{ post.date | date: "%b %-d" }}</div>
+          <div style="color: var(--ink-soft); font-size:0.85rem;">{{ post.date | date: "%Y" }}</div>
+        </div>
+        <div>
+          {% if post.category %}<p class="eyebrow" style="margin-bottom:0.3em;">{{ post.category }}</p>{% endif %}
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | default: post.content | strip_html | truncatewords: 26 }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+      <div class="icon-roundel" aria-hidden="true">{% include icons/leaf.svg %}</div>
+      <h3>Nothing posted yet &mdash; check back soon</h3>
+      <p>We're just getting started. Once our founding trustees are on board, this is where you'll find events, milestones, and stories from the chapter.</p>
+      <a class="btn btn-forest" href="{{ '/get-involved/' | relative_url }}" style="margin-top:1rem;">Help us get there &mdash; become a trustee</a>
+    </div>
+    {% endif %}
+  </div>
+</section>

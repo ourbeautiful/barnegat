@@ -1,0 +1,61 @@
+# Decap CMS configuration
+# Docs: https://decapcms.org/docs/configuration-options/
+#
+# backend.name "github" talks directly to this repo. It needs a small OAuth
+# proxy to complete the GitHub login handshake (GitHub Pages alone can't do
+# this). See the README section "Setting up the CMS login" for the two
+# common free options. Swap base_url/auth_endpoint for whichever you pick.
+
+backend:
+  name: github
+  repo: yourusername/oba-barnegat   # <-- change to your actual GitHub repo, e.g. "janedoe/oba-barnegat"
+  branch: main
+  base_url: https://api.netlify.com # <-- OAuth proxy URL, see README
+  auth_endpoint: auth
+
+publish_mode: simple
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+collections:
+  - name: "updates"
+    label: "Updates (Events & Announcements)"
+    label_singular: "Update"
+    folder: "_updates"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Announcement", "Event", "Impact Story", "Milestone"]
+        default: "Announcement"
+      - { label: "Short Summary", name: "excerpt", widget: "text", hint: "Shown on the Updates list page." }
+      - { label: "Photo", name: "image", widget: "image", required: false }
+      - { label: "Photo Description", name: "image_alt", widget: "string", required: false }
+      - { label: "Full Story", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Organization Info"
+        name: "site"
+        file: "_data/site.yml"
+        fields:
+          - { label: "Organization Name", name: "org_name", widget: "string" }
+          - { label: "Chapter Name", name: "chapter_name", widget: "string" }
+          - { label: "Chapter Status", name: "chapter_status", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Phone (display)", name: "phone", widget: "string" }
+          - { label: "Phone (dial link, digits only, e.g. +13472650166)", name: "phone_link", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - label: "Navigation Links"
+            name: "nav"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }

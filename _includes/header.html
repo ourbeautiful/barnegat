@@ -1,0 +1,43 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="brand-mark" src="{{ '/assets/img/leaf-mark.svg' | relative_url }}" alt="" aria-hidden="true">
+      <span>
+        {{ site.data.site.org_name }}
+        <span class="brand-sub">{{ site.data.site.chapter_name }}</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" id="navToggle">
+      <span class="sr-only">Menu</span>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        {% for item in site.data.site.nav %}
+        <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+        <li><a class="btn btn-gold" href="{{ '/get-involved/' | relative_url }}">Become a Trustee</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('primary-nav');
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
