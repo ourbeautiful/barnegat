@@ -4,8 +4,8 @@ description: "Civic pride. Love of nature. Young leadership. The founding chapte
 # IMPORTANT: update these two once your GitHub Pages URL is known.
 # Example for a project site: url: "https://yourusername.github.io", baseurl: "/oba-barnegat"
 # Example for a custom domain: url: "https://ourbeautifulbarnegat.org", baseurl: ""
-url: "https://yourusername.github.io"
-baseurl: "/oba-barnegat"
+url: "https://ourbeautiful.github.io"
+baseurl: "/barnegat"
 
 markdown: kramdown
 permalink: pretty
