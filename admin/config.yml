@@ -8,7 +8,7 @@
 
 backend:
   name: github
-  repo: yourusername/oba-barnegat   # <-- change to your actual GitHub repo, e.g. "janedoe/oba-barnegat"
+  repo: ourbeautiful/barnegat   # <-- change to your actual GitHub repo, e.g. "janedoe/oba-barnegat"
   branch: main
   base_url: https://api.netlify.com # <-- OAuth proxy URL, see README
   auth_endpoint: auth
