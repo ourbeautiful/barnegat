@@ -4,34 +4,21 @@
 
   <defs>
     <symbol id="chair-filled" viewBox="-30 -32 60 64">
-      <rect x="-28" y="-32" width="56" height="14" rx="7" fill="#122820"/>
-      <rect x="-26" y="-16" width="52" height="48" rx="14" fill="#1B3A2B"/>
+      <rect x="-28" y="-32" width="56" height="14" rx="7" fill="#0a0a0a"/>
+      <rect x="-26" y="-16" width="52" height="48" rx="14" fill="#131313"/>
     </symbol>
     <symbol id="chair-open" viewBox="-30 -32 60 64">
-      <rect x="-28" y="-32" width="56" height="14" rx="7" fill="none" stroke="#B8872A" stroke-width="2.5" stroke-dasharray="4 5"/>
-      <rect x="-26" y="-16" width="52" height="48" rx="14" fill="#FAF1DC" stroke="#B8872A" stroke-width="2.5" stroke-dasharray="4 5"/>
-      <path d="M240 240" />
+      <rect x="-28" y="-32" width="56" height="14" rx="7" fill="none" stroke="#b54c16" stroke-width="2.5" stroke-dasharray="4 5"/>
+      <rect x="-26" y="-16" width="52" height="48" rx="14" fill="#fafaf7" stroke="#b54c16" stroke-width="2.5" stroke-dasharray="4 5"/>
     </symbol>
   </defs>
 
-  <!-- table top -->
-  <circle cx="240" cy="240" r="104" fill="#C9A876" stroke="#A9814C" stroke-width="3"/>
-  <circle cx="240" cy="240" r="82" fill="none" stroke="#A9814C" stroke-width="1.5" opacity="0.45"/>
-  <circle cx="240" cy="240" r="58" fill="none" stroke="#A9814C" stroke-width="1.5" opacity="0.3"/>
+  <circle cx="240" cy="240" r="104" fill="#c7b291" stroke="#a08a63" stroke-width="3"/>
+  <circle cx="240" cy="240" r="82" fill="none" stroke="#a08a63" stroke-width="1.5" opacity="0.45"/>
+  <circle cx="240" cy="240" r="58" fill="none" stroke="#a08a63" stroke-width="1.5" opacity="0.3"/>
 
-  <!-- founder's seat: top, filled -->
-  <g transform="translate(240,65)">
-    <use href="#chair-filled" width="60" height="64"/>
-  </g>
-
-  <!-- three open seats -->
-  <g class="seat-open" transform="translate(415,240) rotate(90)">
-    <use href="#chair-open" width="60" height="64"/>
-  </g>
-  <g class="seat-open" transform="translate(240,415) rotate(180)">
-    <use href="#chair-open" width="60" height="64"/>
-  </g>
-  <g class="seat-open" transform="translate(65,240) rotate(270)">
-    <use href="#chair-open" width="60" height="64"/>
-  </g>
+  <g transform="translate(240,65)"><use href="#chair-filled" width="60" height="64"/></g>
+  <g class="seat-open" transform="translate(415,240) rotate(90)"><use href="#chair-open" width="60" height="64"/></g>
+  <g class="seat-open" transform="translate(240,415) rotate(180)"><use href="#chair-open" width="60" height="64"/></g>
+  <g class="seat-open" transform="translate(65,240) rotate(270)"><use href="#chair-open" width="60" height="64"/></g>
 </svg>

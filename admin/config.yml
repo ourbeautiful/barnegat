@@ -1,17 +1,13 @@
-# Decap CMS configuration
-# Docs: https://decapcms.org/docs/configuration-options/
+# Decap CMS configuration — https://decapcms.org/docs/configuration-options/
 #
-# backend.name "github" talks directly to this repo. It needs a small OAuth
-# proxy to complete the GitHub login handshake (GitHub Pages alone can't do
-# this). See the README section "Setting up the CMS login" for the two
-# common free options. Swap base_url/auth_endpoint for whichever you pick.
+# backend.name "git-gateway" pairs with Netlify Identity for login (see the
+# README section "Setting up the CMS login"). If you're using the GitHub
+# OAuth proxy approach instead, swap this block back to name: github with
+# base_url / auth_endpoint pointing at your proxy.
 
 backend:
-  name: github
-  repo: ourbeautiful/barnegat   # <-- change to your actual GitHub repo, e.g. "janedoe/oba-barnegat"
+  name: git-gateway
   branch: main
-  base_url: https://api.netlify.com # <-- OAuth proxy URL, see README
-  auth_endpoint: auth
 
 publish_mode: simple
 media_folder: "assets/img/uploads"
@@ -47,12 +43,22 @@ collections:
         fields:
           - { label: "Organization Name", name: "org_name", widget: "string" }
           - { label: "Chapter Name", name: "chapter_name", widget: "string" }
+          - { label: "Chapter Short Name", name: "chapter_short", widget: "string" }
           - { label: "Chapter Status", name: "chapter_status", widget: "string" }
           - { label: "Tagline", name: "tagline", widget: "string" }
           - { label: "Phone (display)", name: "phone", widget: "string" }
-          - { label: "Phone (dial link, digits only, e.g. +13472650166)", name: "phone_link", widget: "string" }
+          - { label: "Phone (dial link, e.g. +13472650166)", name: "phone_link", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Location", name: "location", widget: "string" }
+          - { label: "Founded By", name: "founded_by", widget: "string" }
+          - { label: "Age Range", name: "age_range", widget: "string" }
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "X (Twitter) URL", name: "x", widget: "string" }
+              - { label: "Instagram URL", name: "instagram", widget: "string" }
+              - { label: "TikTok URL", name: "tiktok", widget: "string" }
           - label: "Navigation Links"
             name: "nav"
             widget: "list"

@@ -1,25 +1,45 @@
 ---
 layout: default
 title: null
-description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barnegat is the founding chapter of Our Beautiful America — and we're looking for three founding trustees."
+description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barnegat is the founding chapter of Our Beautiful America, started by Barnegat High School students."
 ---
 
 <!-- ===================== HERO ===================== -->
 <section class="hero on-dark">
   <div class="container">
-    <img class="hero-mark" src="{{ '/assets/img/leaf-mark.svg' | relative_url }}" alt="">
-    <p class="eyebrow">OBA &middot; Our Beautiful Barnegat &mdash; Founding Chapter</p>
-    <h1>Our Beautiful America</h1>
+    <img class="hero-mark" src="{{ '/assets/img/obb-logo.png' | relative_url }}" alt="Our Beautiful Barnegat logo">
+    <p class="eyebrow">{{ site.data.site.chapter_status }} &middot; {{ site.data.site.org_name }}</p>
+    <h1>Our Beautiful Barnegat</h1>
     <p class="tagline">Civic pride. Love of nature. Young leadership.</p>
     <div class="hero-ctas">
-      <a class="btn btn-gold" href="{{ '/get-involved/' | relative_url }}">Become a Founding Trustee</a>
-      <a class="btn btn-outline" href="{{ '/about/' | relative_url }}">Read our story</a>
+      <a class="btn btn-tiger" href="{{ '/get-involved/' | relative_url }}">Become a Founding Trustee</a>
+      <a class="btn btn-outline" href="{{ '/programs/' | relative_url }}">See our programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FIRST EVENT ===================== -->
+<section class="section reveal">
+  <div class="container split split-reverse">
+    <div>
+      {% include event-carousel.html %}
+    </div>
+    <div>
+      <p class="eyebrow">{% include icons/paw.svg %} Our First Event</p>
+      <h2>We started with a trail and five trash bags</h2>
+      <p>On May 3, 2026, five OBB members walked the Barnegat Branch Trail with nothing but gloves and garbage bags. A few hours later, they'd worked their way through the woods and into the Atlantic Heights community, picking up what didn't belong.</p>
+      <p>No grant, no big event budget &mdash; just five people who showed up.</p>
+      <div class="event-stats">
+        <div class="event-stat">{% include icons/paw.svg %}<div><strong>5</strong><span>Members showed up</span></div></div>
+        <div class="event-stat">{% include icons/paw.svg %}<div><strong>5</strong><span>Bags of trash collected</span></div></div>
+        <div class="event-stat">{% include icons/paw.svg %}<div><strong>1</strong><span>Trail, left better</span></div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== THE SPARK ===================== -->
-<section class="section on-cream reveal">
+<section class="section on-tan reveal">
   <div class="container split">
     <div>
       <p class="eyebrow">The Spark Behind OBA</p>
@@ -27,10 +47,9 @@ description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barne
       <p>I grew up loving my community, wanting a hand in shaping it. But when I looked for a seat at the table, my age was the reason I was told to wait.</p>
       <p class="pull-quote">So instead of waiting, I decided to build a table of my own.</p>
     </div>
-    <div class="visionaries">
-      <h3>Inspired by visionaries</h3>
-      <p>Henry Ford, Walt Disney, and Howard Hughes &mdash; American builders who turned bold ideas into lasting institutions. Big dreams just need someone willing to start.</p>
-      <div class="visionaries-figures" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="card">
+      <h3 style="text-transform:none; font-family: var(--font-body); font-weight:700;">Started by Barnegat High School students</h3>
+      <p>Our Beautiful Barnegat is open to students and young adults ages {{ site.data.site.age_range }} &mdash; parents and older adults are welcome too. It's built to teach real skills: community service, volunteer work, neighbor and community building, connections, and leadership &mdash; while supporting the local businesses and community around us.</p>
     </div>
   </div>
 </section>
@@ -43,33 +62,39 @@ description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barne
       <h2>Three commitments, one community</h2>
     </div>
     <div class="grid grid-3">
-      <div class="card card-tint-a">
-        <div class="icon-roundel" aria-hidden="true">
-          {% include icons/civic.svg %}
-        </div>
-        <h3>Civic Improvement &amp; Development</h3>
+      <div class="card">
+        <div class="icon-roundel" aria-hidden="true">{% include icons/civic.svg %}</div>
+        <h3 style="text-transform:none;">Civic Improvement &amp; Development</h3>
         <p>Strengthening our infrastructure and building new monuments and amenities.</p>
       </div>
-      <div class="card card-tint-b">
-        <div class="icon-roundel roundel-bay" aria-hidden="true">
-          {% include icons/leaf.svg %}
-        </div>
-        <h3>Safekeeping the Natural World</h3>
+      <div class="card">
+        <div class="icon-roundel roundel-tiger" aria-hidden="true">{% include icons/leaf2.svg %}</div>
+        <h3 style="text-transform:none;">Safekeeping the Natural World</h3>
         <p>Protecting and growing the wild places that make our home beautiful.</p>
       </div>
-      <div class="card card-tint-c">
-        <div class="icon-roundel roundel-cream" aria-hidden="true">
-          {% include icons/handshake.svg %}
-        </div>
-        <h3>Youth Leadership &amp; Connection</h3>
+      <div class="card">
+        <div class="icon-roundel roundel-ink" aria-hidden="true">{% include icons/handshake.svg %}</div>
+        <h3 style="text-transform:none;">Youth Leadership &amp; Connection</h3>
         <p>Giving young people a real seat at the table &mdash; and each other.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===================== PROGRAMS TEASER ===================== -->
+<section class="section on-dark reveal">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">{% include icons/paw.svg %} What We're Building</p>
+      <h2>Three programs, one trail forward</h2>
+      <p>From telling Barnegat's story to arguing it well to building it with our hands &mdash; here's how OBB turns civic pride into action.</p>
+    </div>
+    <a class="btn btn-tiger" href="{{ '/programs/' | relative_url }}">Explore our programs</a>
+  </div>
+</section>
+
 <!-- ===================== ROOTED IN BARNEGAT ===================== -->
-<section class="section on-sage reveal">
+<section class="section reveal">
   <div class="container split">
     <div>
       <p class="eyebrow">Rooted in Barnegat</p>
@@ -77,9 +102,9 @@ description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barne
       <p>Barnegat sits where two treasures meet &mdash; the quiet, tea-colored streams of the Pinelands, and the open water of Barnegat Bay.</p>
       <p>Sandy pine forests, salt marsh, and shoreline, all within reach of home. That's what Our Beautiful Barnegat is here to protect, restore, and share with the next generation.</p>
     </div>
-    <div class="card">
+    <div class="card card-tan">
       <div class="feature-row">
-        <div class="icon-roundel roundel-bay" aria-hidden="true">{% include icons/water.svg %}</div>
+        <div class="icon-roundel roundel-tiger" aria-hidden="true">{% include icons/water.svg %}</div>
         <div><strong>Barnegat Bay</strong><p>Open water at our doorstep.</p></div>
       </div>
       <div class="feature-row">
@@ -87,7 +112,7 @@ description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barne
         <div><strong>The Pinelands</strong><p>Tea-colored streams and sandy pine forest.</p></div>
       </div>
       <div class="feature-row">
-        <div class="icon-roundel roundel-cream" aria-hidden="true">{% include icons/pin.svg %}</div>
+        <div class="icon-roundel roundel-ink" aria-hidden="true">{% include icons/pin.svg %}</div>
         <div><strong>Local Parks &amp; Shoreline</strong><p>The everyday places worth protecting.</p></div>
       </div>
     </div>
@@ -95,7 +120,7 @@ description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barne
 </section>
 
 <!-- ===================== WHY WE NEED YOU / TABLE SIGNATURE ===================== -->
-<section class="section reveal">
+<section class="section on-tan reveal">
   <div class="container table-signature">
     <div class="table-visual">
       {% include svg-table.html %}
@@ -110,24 +135,8 @@ description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barne
       <h2 style="margin-top:0.2rem;">Founding trustees needed</h2>
       <p>Every nonprofit starts with a small founding board &mdash; people willing to lend their name, their wisdom, and a bit of time to help something good get off the ground.</p>
       <p>OBA and Our Beautiful Barnegat are ready to become official. We just need three people to help us take that first step.</p>
-      <a class="btn btn-forest" href="{{ '/get-involved/' | relative_url }}" style="margin-top:1rem;">See what it looks like</a>
+      <a class="btn btn-ink" href="{{ '/get-involved/' | relative_url }}" style="margin-top:1rem;">See what it looks like</a>
     </div>
-  </div>
-</section>
-
-<!-- ===================== WHAT WE'RE BUILDING TOWARD ===================== -->
-<section class="section on-cream reveal">
-  <div class="container" style="max-width:760px;">
-    <div class="section-head">
-      <p class="eyebrow">What We're Building Toward</p>
-      <h2>A community young people help lead &mdash; not just watch</h2>
-    </div>
-    <ul class="checklist">
-      <li>{% include icons/check.svg %} Local parks and forests getting the attention they deserve</li>
-      <li>{% include icons/check.svg %} Youth-led programs rooted right here in Barnegat</li>
-      <li>{% include icons/check.svg %} A community where young people help lead, not just watch</li>
-    </ul>
-    <p class="fine-print">May increase property value.</p>
   </div>
 </section>
 
@@ -144,7 +153,7 @@ description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barne
       <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>
     </p>
     <div class="hero-ctas" style="justify-content:center; margin-top:2rem;">
-      <a class="btn btn-gold" href="{{ '/get-involved/' | relative_url }}">Learn what it looks like</a>
+      <a class="btn btn-tiger" href="{{ '/get-involved/' | relative_url }}">Learn what it looks like</a>
     </div>
   </div>
 </section>

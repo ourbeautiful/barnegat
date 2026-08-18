@@ -1,9 +1,6 @@
-title: "Our Beautiful America — Our Beautiful Barnegat"
-description: "Civic pride. Love of nature. Young leadership. The founding chapter of Our Beautiful America."
+title: "Our Beautiful Barnegat"
+description: "Civic pride. Love of nature. Young leadership. The founding chapter of Our Beautiful America, started by Barnegat High School students."
 
-# IMPORTANT: update these two once your GitHub Pages URL is known.
-# Example for a project site: url: "https://yourusername.github.io", baseurl: "/oba-barnegat"
-# Example for a custom domain: url: "https://ourbeautifulbarnegat.org", baseurl: ""
 url: "https://barnegat.ourbeautiful.org"
 baseurl: ""
 

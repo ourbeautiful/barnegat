@@ -1,77 +1,50 @@
-# Our Beautiful Barnegat — Website
+# Our Beautiful Barnegat — Website (v2, OBB-branded)
 
-A Jekyll site for the Our Beautiful Barnegat founding chapter, built to host free on
-GitHub Pages with content editable through Decap CMS.
+This replaces the previous OBA-forest-green version of the site with OBB's own
+identity — black/tiger-orange, built from the Barnegat High School crest —
+plus new content: the Programs page, the first-event section, founding-story
+details, and social links.
 
-## What's in here
+**This is a full replacement of the repo contents**, not a patch. Since it's
+the same repo (`ourbeautiful/barnegat`) and same live site
+(`barnegat.ourbeautiful.org`), see "Applying this update" below before you
+push anything.
 
-- `index.html`, `about.html`, `get-involved.html`, `contact.html`, `updates.html` — the site's pages
-- `_updates/` — one Markdown file per news item / event / announcement (the "Updates" collection)
-- `_data/site.yml` — org name, phone, email, nav links — edit this to change contact info sitewide
-- `_layouts/`, `_includes/` — shared page structure (header, footer, fonts, the table illustration)
-- `assets/` — CSS and images
-- `admin/` — the Decap CMS content editor
+## What's new since the last version
 
-## 1. Put this on GitHub
+- **New visual identity**: palette and type pulled from the OBB crest instead of the OBA deck (see `assets/css/style.css` token comments at the top)
+- **`/programs/`** — a new page: OBB Times, Debate & Speech Club, and Beautification Corps (Construction + Environmental divisions), written as a flowing narrative instead of bullets, connected by a "trail marker" visual motif
+- **First event section on the homepage** — a manual-advance photo carousel (arrows/dots, no auto-rotate — see comment in `_includes/event-carousel.html` for why) paired with the May 3, 2026 trail cleanup story and real stats
+- **Founding story update** — About page and homepage now mention Barnegat High School, the 13–18 age range (parents/older adults welcome), and the skills/local-business angle
+- **Social links** — X, Instagram, TikTok in the footer sitewide, plus a dedicated block on the Contact page
+- **New signature element**: a paw-print "trail" motif (see `_includes/icons/paw.svg` and `.trail-divider` / `.programs-trail` in the CSS) — distinct from OBA's "seats at the table" motif, which stays used only for the trustee-recruitment sections since that's specifically the founder's story, not OBB's
 
-1. Create a **new, public** repository on GitHub (public is required for free GitHub Pages), e.g. `oba-barnegat`.
-2. Upload these files: on the repo's main page, click **Add file → Upload files**, drag in everything from this folder (keeping the folder structure), and commit.
-   - Prefer using git on your computer? `git init`, `git add .`, `git commit -m "Initial site"`, then `git remote add origin <your repo URL>` and `git push -u origin main`.
-3. In the repo, go to **Settings → Pages**. Under "Build and deployment," set **Source** to "Deploy from a branch," branch **main**, folder **/(root)**. Save.
-4. GitHub will build the Jekyll site automatically (no extra workflow file needed) and give you a URL like `https://yourusername.github.io/oba-barnegat/`.
-5. Open `_config.yml` and update `url` and `baseurl` to match that address exactly, then commit the change (this fixes internal links and SEO tags).
+## Applying this update
 
-### Using a real domain (e.g. ourbeautifulbarnegat.org)
-Add a `CNAME` file to the repo root containing just your domain, point your domain's DNS at GitHub Pages (GitHub's docs: "Managing a custom domain for your GitHub Pages site"), and set `_config.yml`'s `url` to your domain with `baseurl` left blank.
+1. **Back up first.** Your live repo already has real commits and possibly CMS-submitted content in `_updates/`. Before overwriting, either:
+   - Pull the current repo down locally and diff `_updates/` against what's here (I only added one seed post — `2026-05-03-first-trail-cleanup.md` — so check whether you already have others to keep), or
+   - Just tell me what's currently in your live `_updates/` folder and I'll merge it in for you.
+2. **Replace these files/folders** in your local copy of the repo: `_config.yml`, `_data/site.yml`, `_includes/`, `_layouts/`, `assets/`, `admin/config.yml`, `index.html`, `about.html`, `contact.html`, `updates.html`, `404.html`, plus the new `programs.html` and `CNAME`.
+3. **Keep as-is / don't overwrite**: anything already in your live `_updates/` folder that isn't in this package, and `admin/index.html` (identical, safe to overwrite too).
+4. Commit and push (GitHub Desktop: review the changed-files list before committing so nothing unexpected gets removed).
 
-## 2. How the GitHub workflow works (plain terms)
-
-- **`main` branch** is what's live on the website. Anything merged into `main` publishes automatically within a minute or two.
-- **Branches** are safe drafts. If someone wants to try a bigger change without risking the live site, they create a branch (`git checkout -b new-homepage-photo`), make changes there, then open a **Pull Request (PR)** — a request to merge that branch into `main`. A teammate can review it before it goes live.
-- **For day-to-day content** (a new event, an updated phone number), you don't need branches at all — the CMS (below) commits straight to `main` for you.
-- **For design/code changes**, ask your developer to work in a branch and PR, so nothing goes live half-finished.
-
-## 3. Setting up the CMS login
-
-The CMS (`/admin`) lets non-technical teammates log in and edit content through
-a form — no code, no git commands. Because GitHub Pages is static hosting, the
-CMS needs one small piece elsewhere to handle secure login (GitHub Pages
-itself can't do this part). Two free options:
-
-**Option A — Netlify for auth only (recommended, ~10 minutes, still hosts on GitHub Pages)**
-1. Create a free Netlify account and "Import" this same GitHub repo as a new Netlify site (Netlify will build it, but you keep GitHub Pages as your real public URL — Netlify is only providing login here).
-2. In that Netlify site: **Site configuration → Identity → Enable Identity**, then **Services → Git Gateway → Enable Git Gateway**.
-3. In `admin/config.yml`, change the `backend` block to:
-   ```yaml
-   backend:
-     name: git-gateway
-     branch: main
-   ```
-4. Under Netlify **Identity → Invite users**, invite your teammates by email. They'll set a password and can then log in at `yourusername.github.io/oba-barnegat/admin/`.
-
-**Option B — GitHub OAuth app + a small proxy**
-Keeps everything within GitHub/Vercel/Cloudflare (no Netlify at all). Follow Decap CMS's guide: https://decapcms.org/docs/github-backend/ — you'll register a GitHub OAuth App and deploy one of the free open-source OAuth proxy templates linked there, then set `base_url` in `admin/config.yml` to that proxy's URL.
-
-Either way, also update `repo:` in `admin/config.yml` to your actual `username/reponame`.
-
-## 4. Day-to-day content editing
-
-**Adding an event, announcement, or impact story:**
-1. Go to `yourdomain/admin/`, log in, choose **Updates (Events & Announcements) → New Update**.
-2. Fill in the title, date, category, a short summary, an optional photo, and the full story.
-3. Click **Publish** — it commits a new file to `_updates/` and goes live automatically.
-4. Prefer editing on GitHub directly? Copy `_updates/2026-08-02-founding-trustees-now-recruiting.md` as a template.
-
-**Updating contact info, tagline, or nav links:**
-Go to `admin/ → Site Settings → Organization Info`, edit, and publish. This updates the phone/email/tagline everywhere on the site (footer, contact page, CTAs).
-
-## 5. Previewing changes locally (optional, for your developer)
-
-```bash
-bundle install
-bundle exec jekyll serve
+## `_config.yml` — already set for your live domain
+Since you're running this at `barnegat.ourbeautiful.org`, `_config.yml` in this
+package is already set to:
+```yaml
+url: "https://barnegat.ourbeautiful.org"
+baseurl: ""
 ```
-Then open `http://localhost:4000/oba-barnegat/`.
+A `CNAME` file (containing `barnegat.ourbeautiful.org`) is included at the repo root — required for GitHub Pages to serve the custom domain correctly. If you already have a `CNAME` file in the live repo, this one is identical, so overwriting is safe.
 
-## Notes on the "Get Involved" form
-It has no backend server, so it opens a pre-filled email to your chapter inbox when submitted (keeps things free and simple). If you'd rather have submissions land in a dashboard, swap it for a free service like Netlify Forms or Formspree later — ask your developer, it's a small change.
+## Editing content going forward
+Nothing changes about the CMS workflow — `/admin/` still edits Updates and
+Site Settings the same way. Site Settings now also includes the social links
+and age range, editable without touching code.
+
+## New assets note
+- `assets/img/obb-logo.png` — the crest, used as the header/footer mark and favicon
+- `assets/img/events/` — the three first-event photos, already resized/compressed for web (originals were several MB each; these are optimized to load fast on mobile)
+
+## Everything else
+Repo setup, GitHub Pages, and CMS login instructions are unchanged from before — see the original README steps you already followed for enabling Pages and setting up Netlify Identity + Git Gateway.

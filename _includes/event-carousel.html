@@ -1,0 +1,45 @@
+<div class="carousel" data-carousel>
+  <div class="carousel-track">
+    <div class="carousel-slide is-active">
+      <img src="{{ '/assets/img/events/cleanup-1.jpg' | relative_url }}" alt="Two OBB members tying off filled trash bags on the Barnegat Branch Trail">
+      <div class="carousel-caption">Bagging trash along the trail, May 3, 2026</div>
+    </div>
+    <div class="carousel-slide">
+      <img src="{{ '/assets/img/events/cleanup-2.jpg' | relative_url }}" alt="Five filled black trash bags collected during the cleanup">
+      <div class="carousel-caption">Five bags collected, straight from the woods</div>
+    </div>
+    <div class="carousel-slide">
+      <img src="{{ '/assets/img/events/trail-sign.jpg' | relative_url }}" alt="The Barnegat Branch Trail entrance sign, Ocean County Parks and Recreation">
+      <div class="carousel-caption">Where it happened: the Barnegat Branch Trail</div>
+    </div>
+  </div>
+  <button class="carousel-arrow prev" type="button" aria-label="Previous photo">{% include icons/arrow-left.svg %}</button>
+  <button class="carousel-arrow next" type="button" aria-label="Next photo">{% include icons/arrow-right.svg %}</button>
+  <div class="carousel-controls" role="tablist" aria-label="Choose photo">
+    <button class="carousel-dot is-active" type="button" aria-label="Photo 1"></button>
+    <button class="carousel-dot" type="button" aria-label="Photo 2"></button>
+    <button class="carousel-dot" type="button" aria-label="Photo 3"></button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    document.querySelectorAll('[data-carousel]').forEach(function (root) {
+      var slides = root.querySelectorAll('.carousel-slide');
+      var dots = root.querySelectorAll('.carousel-dot');
+      var idx = 0;
+
+      // Manual-advance only (arrows/dots), by design: an auto-rotating photo
+      // carousel next to body text people are reading is a common
+      // accessibility complaint, so this never moves on its own.
+      function show(i) {
+        idx = (i + slides.length) % slides.length;
+        slides.forEach(function (s, n) { s.classList.toggle('is-active', n === idx); });
+        dots.forEach(function (d, n) { d.classList.toggle('is-active', n === idx); });
+      }
+      root.querySelector('.prev').addEventListener('click', function () { show(idx - 1); });
+      root.querySelector('.next').addEventListener('click', function () { show(idx + 1); });
+      dots.forEach(function (d, n) { d.addEventListener('click', function () { show(n); }); });
+    });
+  })();
+</script>

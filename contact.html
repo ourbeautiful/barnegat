@@ -1,35 +1,51 @@
 ---
 layout: default
 title: "Contact"
-description: "Reach Our Beautiful Barnegat by phone or email."
+description: "Reach Our Beautiful Barnegat by phone, email, or social media."
 ---
 
 <section class="page-hero">
   <div class="container">
     <p class="eyebrow">Contact</p>
     <h1>Say hello</h1>
-    <p>Questions about the chapter, the mission, or becoming a founding trustee &mdash; reach out any time.</p>
+    <p>Questions about the chapter, our programs, or becoming a founding trustee &mdash; reach out any time.</p>
   </div>
 </section>
 
 <section class="section reveal">
   <div class="container">
     <div class="grid grid-2">
-      <a class="card card-tint-a" href="tel:{{ site.data.site.phone_link }}" style="text-decoration:none;">
+      <a class="card" href="tel:{{ site.data.site.phone_link }}" style="text-decoration:none;">
         <div class="icon-roundel" aria-hidden="true">{% include icons/phone.svg %}</div>
-        <h3>Call or text</h3>
-        <p style="color: var(--forest); font-weight:700; font-size:1.15rem;">{{ site.data.site.phone }}</p>
+        <h3 style="text-transform:none;">Call or text</h3>
+        <p style="color: var(--ink); font-weight:700; font-size:1.15rem;">{{ site.data.site.phone }}</p>
       </a>
-      <a class="card card-tint-c" href="mailto:{{ site.data.site.email }}" style="text-decoration:none;">
-        <div class="icon-roundel roundel-cream" aria-hidden="true">{% include icons/mail.svg %}</div>
-        <h3>Email</h3>
-        <p style="color: var(--forest); font-weight:700; font-size:1.15rem; word-break: break-word;">{{ site.data.site.email }}</p>
+      <a class="card" href="mailto:{{ site.data.site.email }}" style="text-decoration:none;">
+        <div class="icon-roundel roundel-tiger" aria-hidden="true">{% include icons/mail.svg %}</div>
+        <h3 style="text-transform:none;">Email</h3>
+        <p style="color: var(--ink); font-weight:700; font-size:1.15rem; word-break: break-word;">{{ site.data.site.email }}</p>
       </a>
     </div>
 
-    <div class="card card-sage" style="margin-top: var(--gap);">
-      <h3>Where we're based</h3>
-      <p>Our Beautiful Barnegat serves Barnegat Township and the surrounding Pinelands and Barnegat Bay area in Ocean County, New Jersey.</p>
+    <div class="card card-tan" style="margin-top: var(--gap);">
+      <h3 style="text-transform:none;">Follow along</h3>
+      <p>See what OBB is up to between events.</p>
+      <div class="footer-social" style="margin-top: 1rem;">
+        <a href="{{ site.data.site.social.x }}" target="_blank" rel="noopener noreferrer" aria-label="Our Beautiful Barnegat on X" style="border-color: var(--line);">
+          <span style="color: var(--ink);">{% include icons/x-social.svg %}</span>
+        </a>
+        <a href="{{ site.data.site.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Our Beautiful Barnegat on Instagram" style="border-color: var(--line);">
+          <span style="color: var(--ink);">{% include icons/instagram.svg %}</span>
+        </a>
+        <a href="{{ site.data.site.social.tiktok }}" target="_blank" rel="noopener noreferrer" aria-label="Our Beautiful Barnegat on TikTok" style="border-color: var(--line);">
+          <span style="color: var(--ink);">{% include icons/tiktok.svg %}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: var(--gap);">
+      <h3 style="text-transform:none;">Where we're based</h3>
+      <p>Our Beautiful Barnegat serves Barnegat Township and the surrounding Pinelands and Barnegat Bay area in Ocean County, New Jersey. OBB was started by students at Barnegat High School.</p>
     </div>
   </div>
 </section>
@@ -40,6 +56,6 @@ description: "Reach Our Beautiful Barnegat by phone or email."
       <p class="eyebrow">Want to do more than say hello?</p>
       <h2>We're recruiting our three founding trustees right now.</h2>
     </div>
-    <a class="btn btn-gold" href="{{ '/get-involved/' | relative_url }}">Become a founding trustee</a>
+    <a class="btn btn-tiger" href="{{ '/get-involved/' | relative_url }}">Become a founding trustee</a>
   </div>
 </section>

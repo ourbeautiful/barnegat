@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Get Involved"
-description: "Become one of our three founding trustees. A light time commitment, real impact from day one."
+description: "Join a program, or become one of our three founding trustees."
 ---
 
 <section class="page-hero">
@@ -29,26 +29,26 @@ description: "Become one of our three founding trustees. A light time commitment
   </div>
 </section>
 
-<section class="section on-cream reveal">
+<section class="section on-tan reveal">
   <div class="container">
     <div class="section-head center">
       <p class="eyebrow">What It Looks Like</p>
       <h2>A real role, without the full-time weight</h2>
     </div>
     <div class="grid grid-3">
-      <div class="card card-tint-a">
+      <div class="card">
         <div class="icon-roundel" aria-hidden="true">{% include icons/calendar.svg %}</div>
-        <h3>Light Time Commitment</h3>
+        <h3 style="text-transform:none;">Light Time Commitment</h3>
         <p>A few meetings a year &mdash; not a full-time job.</p>
       </div>
-      <div class="card card-tint-b">
-        <div class="icon-roundel roundel-bay" aria-hidden="true">{% include icons/idea.svg %}</div>
-        <h3>Share Your Wisdom</h3>
+      <div class="card">
+        <div class="icon-roundel roundel-tiger" aria-hidden="true">{% include icons/idea.svg %}</div>
+        <h3 style="text-transform:none;">Share Your Wisdom</h3>
         <p>Help guide big decisions using experience you already have.</p>
       </div>
-      <div class="card card-tint-c">
-        <div class="icon-roundel roundel-cream" aria-hidden="true">{% include icons/heart.svg %}</div>
-        <h3>Real Impact, Day One</h3>
+      <div class="card">
+        <div class="icon-roundel roundel-ink" aria-hidden="true">{% include icons/heart.svg %}</div>
+        <h3 style="text-transform:none;">Real Impact, Day One</h3>
         <p>Be part of something meaningful from the very start.</p>
       </div>
     </div>
@@ -58,20 +58,16 @@ description: "Become one of our three founding trustees. A light time commitment
 <section class="section reveal">
   <div class="container" style="max-width:760px;">
     <div class="section-head">
-      <p class="eyebrow">What We're Building Toward</p>
-      <h2>A community young people help lead</h2>
+      <p class="eyebrow">{% include icons/paw.svg %} Not Ready for the Board?</p>
+      <h2>Join a program instead</h2>
+      <p>Trustees aren't the only way in. OBB Times, Debate &amp; Speech Club, and Beautification Corps are all open to members ages {{ site.data.site.age_range }} right now &mdash; no formal commitment required.</p>
     </div>
-    <ul class="checklist">
-      <li>{% include icons/check.svg %} Local parks and forests getting the attention they deserve</li>
-      <li>{% include icons/check.svg %} Youth-led programs rooted right here in Barnegat</li>
-      <li>{% include icons/check.svg %} A community where young people help lead, not just watch</li>
-    </ul>
-    <p class="fine-print">May increase property value.</p>
+    <a class="btn btn-ink" href="{{ '/programs/' | relative_url }}">See our programs</a>
   </div>
 </section>
 
 <!-- ===================== APPLICATION FORM ===================== -->
-<section class="section on-sage reveal" id="apply">
+<section class="section on-tan reveal" id="apply">
   <div class="container">
     <div class="section-head">
       <p class="eyebrow">Become a Founding Trustee</p>
@@ -97,32 +93,29 @@ description: "Become one of our three founding trustees. A light time commitment
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
       <div>
-        <button class="btn btn-gold" type="submit">Send my interest</button>
+        <button class="btn btn-tiger" type="submit">Send my interest</button>
       </div>
     </form>
   </div>
 </section>
 
 <script>
-  // No-backend form: builds a pre-filled mailto so submissions land directly
-  // in the chapter inbox. Swap for Netlify Forms / Formspree later if you'd
-  // like submissions to land in a dashboard instead of email.
   (function () {
     var form = document.getElementById('trusteeForm');
     if (!form) return;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name = encodeURIComponent(document.getElementById('name').value);
       var email = document.getElementById('email').value;
       var phone = document.getElementById('phone').value;
       var message = document.getElementById('message').value;
+      var name = document.getElementById('name').value;
       var body = encodeURIComponent(
-        'Name: ' + document.getElementById('name').value + '\n' +
+        'Name: ' + name + '\n' +
         'Email: ' + email + '\n' +
         'Phone: ' + (phone || 'n/a') + '\n\n' +
         message
       );
-      window.location.href = 'mailto:{{ site.data.site.email }}?subject=' + encodeURIComponent('Founding Trustee Interest: ' + document.getElementById('name').value) + '&body=' + body;
+      window.location.href = 'mailto:{{ site.data.site.email }}?subject=' + encodeURIComponent('Founding Trustee Interest: ' + name) + '&body=' + body;
     });
   })();
 </script>

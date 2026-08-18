@@ -1,15 +1,25 @@
 org_name: "Our Beautiful America"
 chapter_name: "Our Beautiful Barnegat"
+chapter_short: "OBB"
 chapter_status: "Founding Chapter"
 tagline: "Civic pride. Love of nature. Young leadership."
 phone: "347-265-0166"
 phone_link: "+13472650166"
 email: "ourbeautifulbarnegat@gmail.com"
 location: "Barnegat, New Jersey"
+founded_by: "Barnegat High School students"
+age_range: "13–18"
+
+social:
+  x: "https://x.com/OurBeautifulBT"
+  instagram: "https://www.instagram.com/ourbeautifulbarnegat/"
+  tiktok: "https://www.tiktok.com/@ourbeautifulbarnegat"
 
 nav:
   - label: "About"
     url: "/about/"
+  - label: "Programs"
+    url: "/programs/"
   - label: "Get Involved"
     url: "/get-involved/"
   - label: "Updates"

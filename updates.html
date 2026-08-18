@@ -21,11 +21,11 @@ description: "News, events, and milestones from Our Beautiful Barnegat."
       <a class="update-card" href="{{ post.url | relative_url }}">
         <div>
           <div class="update-date">{{ post.date | date: "%b %-d" }}</div>
-          <div style="color: var(--ink-soft); font-size:0.85rem;">{{ post.date | date: "%Y" }}</div>
+          <div style="color: var(--text-soft); font-size:0.85rem;">{{ post.date | date: "%Y" }}</div>
         </div>
         <div>
           {% if post.category %}<p class="eyebrow" style="margin-bottom:0.3em;">{{ post.category }}</p>{% endif %}
-          <h3>{{ post.title }}</h3>
+          <h3 style="text-transform:none;">{{ post.title }}</h3>
           <p>{{ post.excerpt | default: post.content | strip_html | truncatewords: 26 }}</p>
         </div>
       </a>
@@ -33,10 +33,10 @@ description: "News, events, and milestones from Our Beautiful Barnegat."
     </div>
     {% else %}
     <div class="empty-state">
-      <div class="icon-roundel" aria-hidden="true">{% include icons/leaf.svg %}</div>
-      <h3>Nothing posted yet &mdash; check back soon</h3>
+      <div class="icon-roundel" aria-hidden="true">{% include icons/paw.svg %}</div>
+      <h3 style="text-transform:none;">Nothing posted yet &mdash; check back soon</h3>
       <p>We're just getting started. Once our founding trustees are on board, this is where you'll find events, milestones, and stories from the chapter.</p>
-      <a class="btn btn-forest" href="{{ '/get-involved/' | relative_url }}" style="margin-top:1rem;">Help us get there &mdash; become a trustee</a>
+      <a class="btn btn-ink" href="{{ '/get-involved/' | relative_url }}" style="margin-top:1rem;">Help us get there &mdash; become a trustee</a>
     </div>
     {% endif %}
   </div>

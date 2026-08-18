@@ -1,18 +1,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if page.title %}{{ page.title }} · {{ site.data.site.org_name }}{% else %}{{ site.data.site.org_name }} — {{ site.data.site.chapter_name }}{% endif %}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.data.site.tagline }} {{ site.data.site.chapter_name }} is the founding chapter of {{ site.data.site.org_name }}, based in {{ site.data.site.location }}.{% endif %}">
-<link rel="icon" href="{{ '/assets/img/leaf-mark.svg' | relative_url }}" type="image/svg+xml">
+<title>{% if page.title %}{{ page.title }} · {{ site.data.site.chapter_name }}{% else %}{{ site.data.site.chapter_name }} — {{ site.data.site.chapter_status }} of {{ site.data.site.org_name }}{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.data.site.tagline }} {{ site.data.site.chapter_name }} is the founding chapter of {{ site.data.site.org_name }}, started by {{ site.data.site.founded_by }} in {{ site.data.site.location }}.{% endif %}">
+<link rel="icon" href="{{ '/assets/img/obb-logo.png' | relative_url }}" type="image/png">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-<meta property="og:title" content="{% if page.title %}{{ page.title }} · {{ site.data.site.org_name }}{% else %}{{ site.data.site.org_name }} — {{ site.data.site.chapter_name }}{% endif %}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} · {{ site.data.site.chapter_name }}{% else %}{{ site.data.site.chapter_name }}{% endif %}">
 <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.data.site.tagline }}{% endif %}">
+<meta property="og:image" content="{{ '/assets/img/obb-logo.png' | absolute_url }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta name="twitter:card" content="summary">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
