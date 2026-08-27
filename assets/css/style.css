@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Our Beautiful Barnegat — Design Tokens & Base Styles
+   Our Beautiful Barnegat: Design Tokens & Base Styles
    Palette pulled from the OBB crest: near-black ground, tiger orange,
-   trail tan. A distinct identity from OBA's forest/gold — this chapter's own.
+   trail tan. A distinct identity from OBA's forest/gold, this chapter's own.
    ========================================================================== */
 
 :root {
@@ -255,7 +255,7 @@ p:last-child { margin-bottom: 0; }
 .event-stat span { font-size: 0.8rem; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.04em; }
 
 /* -------------------------------------------------------------------------
-   Trail divider — signature element linking sections/programs
+   Trail divider: signature element linking sections/programs
    ------------------------------------------------------------------------- */
 .trail-divider { display: flex; align-items: center; gap: 0.6rem; margin: 2.5rem 0; color: var(--trail-tan); }
 .trail-divider::before, .trail-divider::after { content: ""; flex: 1; height: 2px; background: repeating-linear-gradient(to right, var(--trail-tan) 0 8px, transparent 8px 14px); }
@@ -302,7 +302,7 @@ p:last-child { margin-bottom: 0; }
 .feature-row strong { display: block; color: var(--ink); font-size: 1.02rem; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.01em; }
 
 /* -------------------------------------------------------------------------
-   Table signature (trustees)
+   Table signature
    ------------------------------------------------------------------------- */
 .table-signature { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
 @media (max-width: 860px) { .table-signature { grid-template-columns: 1fr; } }

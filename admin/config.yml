@@ -1,4 +1,4 @@
-# Decap CMS configuration — https://decapcms.org/docs/configuration-options/
+# Decap CMS configuration: https://decapcms.org/docs/configuration-options/
 #
 # backend.name "git-gateway" pairs with Netlify Identity for login (see the
 # README section "Setting up the CMS login"). If you're using the GitHub
