@@ -27,7 +27,7 @@ collections:
       - label: "Category"
         name: "category"
         widget: "select"
-        options: ["Announcement", "Event", "Impact Story", "Milestone"]
+        options: ["Announcement", "Event", "Event - OBB Times", "Event - Speech and Debate", "Event - Beautification Corps", "Meeting", "Impact Story", "Milestone"]
         default: "Announcement"
       - { label: "Short Summary", name: "excerpt", widget: "text", hint: "Shown on the Updates list page." }
       - { label: "Photo", name: "image", widget: "image", required: false }
