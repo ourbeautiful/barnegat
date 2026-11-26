@@ -21,25 +21,4 @@
     <button class="carousel-dot" type="button" aria-label="Photo 3"></button>
   </div>
 </div>
-
-<script>
-  (function () {
-    document.querySelectorAll('[data-carousel]').forEach(function (root) {
-      var slides = root.querySelectorAll('.carousel-slide');
-      var dots = root.querySelectorAll('.carousel-dot');
-      var idx = 0;
-
-      // Manual-advance only (arrows/dots), by design: an auto-rotating photo
-      // carousel next to body text people are reading is a common
-      // accessibility complaint, so this never moves on its own.
-      function show(i) {
-        idx = (i + slides.length) % slides.length;
-        slides.forEach(function (s, n) { s.classList.toggle('is-active', n === idx); });
-        dots.forEach(function (d, n) { d.classList.toggle('is-active', n === idx); });
-      }
-      root.querySelector('.prev').addEventListener('click', function () { show(idx - 1); });
-      root.querySelector('.next').addEventListener('click', function () { show(idx + 1); });
-      dots.forEach(function (d, n) { d.addEventListener('click', function () { show(n); }); });
-    });
-  })();
-</script>
+<!-- Carousel behavior lives in /assets/js/site.js: manual-advance only (arrows/dots), never auto-rotates. -->

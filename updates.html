@@ -6,37 +6,39 @@ description: "News, events, and milestones from Our Beautiful Barnegat."
 
 <section class="page-hero">
   <div class="container">
-    <p class="eyebrow">Updates</p>
+    <span class="stripes" aria-hidden="true"></span>
+    <p class="kicker">Updates</p>
     <h1>News &amp; milestones</h1>
-    <p>Announcements, events, and stories from Our Beautiful Barnegat, as the chapter comes to life.</p>
+    <p class="lede">Announcements, events, and stories from Our Beautiful Barnegat, as the chapter comes to life.</p>
   </div>
 </section>
 
-<section class="section reveal">
-  <div class="container" style="max-width: 800px;">
+<section class="section">
+  <div class="container timeline-wrap">
     {% assign updates = site.updates | sort: 'date' | reverse %}
     {% if updates.size > 0 %}
-    <div class="updates-list">
+    <ol class="timeline">
       {% for post in updates %}
-      <a class="update-card" href="{{ post.url | relative_url }}">
-        <div>
-          <div class="update-date">{{ post.date | date: "%b %-d" }}</div>
-          <div style="color: var(--text-soft); font-size:0.85rem;">{{ post.date | date: "%Y" }}</div>
-        </div>
-        <div>
-          {% if post.category %}<p class="eyebrow" style="margin-bottom:0.3em;">{{ post.category }}</p>{% endif %}
-          <h3 style="text-transform:none;">{{ post.title }}</h3>
-          <p>{{ post.excerpt | default: post.content | strip_html | truncatewords: 26 }}</p>
-        </div>
-      </a>
+      <li class="tl-item">
+        <div class="tl-date"><span class="d">{{ post.date | date: "%b %-d" }}</span><span class="y">{{ post.date | date: "%Y" }}</span></div>
+        <div class="tl-paw" aria-hidden="true">{% include icons/paw.svg %}</div>
+        <a class="tl-card{% unless post.image %} no-img{% endunless %}" href="{{ post.url | relative_url }}">
+          <div>
+            {% if post.category %}<span class="tl-cat">{{ post.category }}</span>{% endif %}
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt | default: post.content | strip_html | truncatewords: 26 }}</p>
+          </div>
+          {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: '' }}">{% endif %}
+        </a>
+      </li>
       {% endfor %}
-    </div>
+    </ol>
     {% else %}
     <div class="empty-state">
-      <div class="icon-roundel" aria-hidden="true">{% include icons/paw.svg %}</div>
-      <h3 style="text-transform:none;">Nothing posted yet, check back soon</h3>
+      <div class="tl-paw" aria-hidden="true">{% include icons/paw.svg %}</div>
+      <h3>Nothing posted yet, check back soon</h3>
       <p>We're just getting started. This is where you'll find events, milestones, and stories from the chapter.</p>
-      <a class="btn btn-ink" href="{{ '/get-involved/' | relative_url }}" style="margin-top:1rem;">Help us get there</a>
+      <div class="btn-row" style="justify-content:center;"><a class="btn btn-black" href="{{ '/get-involved/' | relative_url }}">Help us get there</a></div>
     </div>
     {% endif %}
   </div>

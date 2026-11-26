@@ -5,132 +5,130 @@ description: "Civic pride. Love of nature. Young leadership. Our Beautiful Barne
 ---
 
 <!-- ===================== HERO ===================== -->
-<section class="hero on-dark">
+<section class="hero">
   <div class="container">
-    <img class="hero-mark" src="{{ '/assets/img/obb-logo.png' | relative_url }}" alt="Our Beautiful Barnegat logo">
-    <p class="eyebrow">{{ site.data.site.chapter_status }} &middot; {{ site.data.site.org_name }}</p>
-    <h1>Our Beautiful Barnegat</h1>
-    <p class="tagline">Civic pride. Love of nature. Young leadership.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-outline" href="{{ '/programs/' | relative_url }}">See our programs</a>
+    <div>
+      <p class="hero-kicker">{{ site.data.site.chapter_status }} &middot; {{ site.data.site.org_name }}</p>
+      <h1 class="wordmark"><span>Our</span><span>Beautiful</span><span class="w-barnegat">Barnegat</span></h1>
+      <span class="stripes" aria-hidden="true"></span>
+      <p class="hero-tagline">Civic pride. Love of nature. Young leadership.</p>
+      <div class="btn-row">
+        <a class="btn btn-tiger" href="{{ '/programs/' | relative_url }}">See our programs</a>
+        <a class="btn btn-ghost" href="{{ '/updates/' | relative_url }}">Latest updates</a>
+      </div>
     </div>
+    <figure class="hero-photo">
+      <img class="hero-main" src="{{ '/assets/img/events/trunk-or-treat-2.jpg' | relative_url }}" alt="OBB members holding a 'Join O.B.B.' sign at the BHS Trunk or Treat">
+      <img class="hero-badge" src="{{ '/assets/img/obb-logo.png' | relative_url }}" alt="Our Beautiful Barnegat logo">
+      <figcaption>OBB members at the BHS Trunk or Treat, October 29, 2026</figcaption>
+    </figure>
   </div>
 </section>
 
 <!-- ===================== FIRST EVENT ===================== -->
-<section class="section reveal">
-  <div class="container split split-reverse">
+<section class="section on-paper">
+  <div class="container split split-wide-left">
     <div>
       {% include event-carousel.html %}
     </div>
     <div>
-      <p class="eyebrow">{% include icons/paw.svg %} Our First Event</p>
+      <p class="kicker">{% include icons/paw.svg %} Our First Event</p>
       <h2>We started with a trail and five trash bags</h2>
       <p>On May 3, 2026, five OBB members walked the Barnegat Branch Trail with nothing but gloves and garbage bags. A few hours later, they'd worked their way through the woods and into the Atlantic Heights community, picking up what didn't belong.</p>
       <p>No grant, no big event budget, just five people who showed up.</p>
       <div class="event-stats">
-        <div class="event-stat">{% include icons/paw.svg %}<div><strong>5</strong><span>Members showed up</span></div></div>
-        <div class="event-stat">{% include icons/paw.svg %}<div><strong>5</strong><span>Bags of trash collected</span></div></div>
-        <div class="event-stat">{% include icons/paw.svg %}<div><strong>1</strong><span>Trail, left better</span></div></div>
+        <div class="event-stat"><strong>5</strong><span>Members showed up</span></div>
+        <div class="event-stat"><strong>5</strong><span>Bags of trash collected</span></div>
+        <div class="event-stat"><strong>1</strong><span>Trail, left better</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===================== LATEST UPDATES ===================== -->
+{% assign latest = site.updates | sort: 'date' | reverse %}
+{% if latest.size > 0 %}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="stripes" aria-hidden="true"></span>
+      <h2>What OBB has been up to</h2>
+      <p>The newest events and milestones from the chapter.</p>
+    </div>
+    <div class="latest-grid">
+      {% for post in latest limit: 3 %}
+      <a class="latest-item" href="{{ post.url | relative_url }}">
+        <div class="thumb">{% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: '' }}">{% endif %}</div>
+        <div>
+          <div class="meta">{{ post.date | date: "%B %-d, %Y" }}{% if post.category %} · {{ post.category }}{% endif %}</div>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | default: post.content | strip_html | truncatewords: 26 }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="latest-foot"><a class="btn btn-black" href="{{ '/updates/' | relative_url }}">See all updates</a></div>
+  </div>
+</section>
+{% endif %}
+
 <!-- ===================== THE SPARK ===================== -->
-<section class="section on-tan reveal">
+<section class="section on-pine">
   <div class="container split">
     <div>
-      <p class="eyebrow">The Spark Behind OBA</p>
+      <p class="kicker">The Spark Behind OBA</p>
       <h2>I decided to build a table of my own.</h2>
       <p>I grew up loving my community, wanting a hand in shaping it. But when I looked for a seat at the table, my age was the reason I was told to wait.</p>
       <p class="pull-quote">So instead of waiting, I decided to build a table of my own.</p>
     </div>
-    <div class="card">
-      <h3 style="text-transform:none; font-family: var(--font-body); font-weight:700;">Started by Barnegat High School students</h3>
+    <div class="aside-panel">
+      <h3>Started by Barnegat High School students</h3>
       <p>Our Beautiful Barnegat is open to students and young adults ages {{ site.data.site.age_range }}, parents and older adults are welcome too. It's built to teach real skills: community service, volunteer work, neighbor and community building, connections, and leadership, while supporting the local businesses and community around us.</p>
     </div>
   </div>
 </section>
 
 <!-- ===================== MISSION ===================== -->
-<section class="section reveal">
-  <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow">Our Mission</p>
-      <h2>Three commitments, one community</h2>
-    </div>
-    <div class="grid grid-3">
-      <div class="card">
-        <div class="icon-roundel" aria-hidden="true">{% include icons/civic.svg %}</div>
-        <h3 style="text-transform:none;">Civic Improvement &amp; Development</h3>
-        <p>Strengthening our infrastructure and building new monuments and amenities.</p>
-      </div>
-      <div class="card">
-        <div class="icon-roundel roundel-tiger" aria-hidden="true">{% include icons/leaf2.svg %}</div>
-        <h3 style="text-transform:none;">Safekeeping the Natural World</h3>
-        <p>Protecting and growing the wild places that make our home beautiful.</p>
-      </div>
-      <div class="card">
-        <div class="icon-roundel roundel-ink" aria-hidden="true">{% include icons/handshake.svg %}</div>
-        <h3 style="text-transform:none;">Youth Leadership &amp; Connection</h3>
-        <p>Giving young people a real seat at the table, and each other.</p>
-      </div>
-    </div>
-  </div>
-</section>
+{% include mission.html %}
 
 <!-- ===================== PROGRAMS TEASER ===================== -->
-<section class="section on-dark reveal">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow">{% include icons/paw.svg %} What We're Building</p>
+<section class="section on-dark programs-band">
+  <div class="container split">
+    <div>
+      <p class="kicker">{% include icons/paw.svg %} What We're Building</p>
       <h2>Three programs, one trail forward</h2>
-      <p>From telling Barnegat's story to arguing it well to building it with our hands, here's how OBB turns civic pride into action.</p>
     </div>
-    <a class="btn btn-tiger" href="{{ '/programs/' | relative_url }}">Explore our programs</a>
+    <div>
+      <p class="lede-text">From telling Barnegat's story to arguing it well to building it with our hands, here's how OBB turns civic pride into action.</p>
+      <div class="btn-row"><a class="btn btn-tiger" href="{{ '/programs/' | relative_url }}">Explore our programs</a></div>
+    </div>
   </div>
 </section>
 
 <!-- ===================== ROOTED IN BARNEGAT ===================== -->
-<section class="section reveal">
+<section class="section on-paper">
   <div class="container split">
     <div>
-      <p class="eyebrow">Rooted in Barnegat</p>
+      <p class="kicker">Rooted in Barnegat</p>
       <h2>Where the Pinelands meet the Bay</h2>
       <p>Barnegat sits where two treasures meet: the quiet, tea-colored streams of the Pinelands, and the open water of Barnegat Bay.</p>
       <p>Sandy pine forests, salt marsh, and shoreline, all within reach of home. That's what Our Beautiful Barnegat is here to protect, restore, and share with the next generation.</p>
     </div>
-    <div class="card card-tan">
-      <div class="feature-row">
-        <div class="icon-roundel roundel-tiger" aria-hidden="true">{% include icons/water.svg %}</div>
-        <div><strong>Barnegat Bay</strong><p>Open water at our doorstep.</p></div>
-      </div>
-      <div class="feature-row">
-        <div class="icon-roundel" aria-hidden="true">{% include icons/pine.svg %}</div>
-        <div><strong>The Pinelands</strong><p>Tea-colored streams and sandy pine forest.</p></div>
-      </div>
-      <div class="feature-row">
-        <div class="icon-roundel roundel-ink" aria-hidden="true">{% include icons/pin.svg %}</div>
-        <div><strong>Local Parks &amp; Shoreline</strong><p>The everyday places worth protecting.</p></div>
+    <div class="panel panel-cedar">
+      <div class="feature-list">
+        <div class="feature-row"><div class="icon tiger" aria-hidden="true">{% include icons/water.svg %}</div><div><strong>Barnegat Bay</strong><p>Open water at our doorstep.</p></div></div>
+        <div class="feature-row"><div class="icon" aria-hidden="true">{% include icons/pine.svg %}</div><div><strong>The Pinelands</strong><p>Tea-colored streams and sandy pine forest.</p></div></div>
+        <div class="feature-row"><div class="icon cedar" aria-hidden="true">{% include icons/pin.svg %}</div><div><strong>Local Parks &amp; Shoreline</strong><p>The everyday places worth protecting.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section class="section on-dark cta-band reveal">
+<section class="section on-tiger cta-band">
   <div class="container">
-    <div class="section-head center">
-      <h2>Help us build something Barnegat, and the next generation, can be proud of.</h2>
-    </div>
-    <p class="contact-line">
-      <a href="tel:{{ site.data.site.phone_link }}">{{ site.data.site.phone }}</a>
-      <span class="or">or</span>
-      <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>
-    </p>
-    <div class="hero-ctas" style="justify-content:center; margin-top:2rem;">
-      <a class="btn btn-tiger" href="{{ '/get-involved/' | relative_url }}">Learn what it looks like</a>
-    </div>
+    <h2>Help us build something Barnegat, and the next generation, can be proud of.</h2>
+    {% include contact-line.html %}
+    <div class="btn-row"><a class="btn btn-black" href="{{ '/get-involved/' | relative_url }}">Learn what it looks like</a></div>
   </div>
 </section>

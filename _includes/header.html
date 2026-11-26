@@ -2,42 +2,21 @@
 <header class="site-header">
   <div class="container">
     <a class="brand" href="{{ '/' | relative_url }}">
-      <img class="brand-mark" src="{{ '/assets/img/obb-logo.png' | relative_url }}" alt="Our Beautiful Barnegat logo">
-      <span class="brand-text">
-        Our Beautiful Barnegat
-        <span class="brand-sub">{{ site.data.site.chapter_status }} &middot; {{ site.data.site.org_name }}</span>
-      </span>
+      <img src="{{ '/assets/img/obb-logo.png' | relative_url }}" alt="Our Beautiful Barnegat logo">
+      <span class="brand-text">Our Beautiful Barnegat<span class="brand-sub">{{ site.data.site.chapter_status }} &middot; {{ site.data.site.org_name }}</span></span>
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" id="navToggle">
-      <span class="sr-only">Menu</span>
-      <span></span><span></span><span></span>
+      <span class="sr-only">Menu</span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </button>
 
     <nav class="site-nav" id="primary-nav" aria-label="Primary">
       <ul>
         {% for item in site.data.site.nav %}
-        <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url or page.collection == 'updates' and item.url == '/updates/' %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
         {% endfor %}
         <li><a class="btn btn-tiger" href="{{ '/get-involved/' | relative_url }}">Join OBB</a></li>
       </ul>
     </nav>
   </div>
 </header>
-
-<script>
-  (function () {
-    var toggle = document.getElementById('navToggle');
-    var nav = document.getElementById('primary-nav');
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  })();
-</script>

@@ -4,26 +4,31 @@ title: "Get Involved"
 description: "Join a program."
 ---
 
-<section class="section reveal">
-  <div class="container" style="max-width:760px;">
-    <div class="section-head">
-      <h2>Join a program</h2>
-      <p>OBB Times, Debate &amp; Speech Club, and Beautification Corps are all open to members ages {{ site.data.site.age_range }} right now, no formal commitment required.</p>
-    </div>
-    <a class="btn btn-ink" href="{{ '/programs/' | relative_url }}">See our programs</a>
+<section class="page-hero">
+  <div class="container">
+    <span class="stripes" aria-hidden="true"></span>
+    <h1>Join a program</h1>
+    <p class="lede">OBB Times, Debate &amp; Speech Club, and Beautification Corps are all open to members ages {{ site.data.site.age_range }} right now, no formal commitment required.</p>
   </div>
 </section>
 
-<section class="section on-dark cta-band reveal">
-  <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow">Prefer to reach out directly?</p>
-      <h2>Help us build something Barnegat, and the next generation, can be proud of.</h2>
+<section class="section">
+  <div class="container join-panel">
+    <ul class="join-programs">
+      <li>{% include icons/newspaper.svg %} OBB Times</li>
+      <li>{% include icons/mic.svg %} Debate &amp; Speech Club</li>
+      <li>{% include icons/hammer.svg %} Beautification Corps</li>
+    </ul>
+    <div>
+      <a class="btn btn-black" href="{{ '/programs/' | relative_url }}">See our programs</a>
     </div>
-    <p class="contact-line">
-      <a href="tel:{{ site.data.site.phone_link }}">{{ site.data.site.phone }}</a>
-      <span class="or">or</span>
-      <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>
-    </p>
+  </div>
+</section>
+
+<section class="section on-tiger cta-band">
+  <div class="container">
+    <p class="kicker kicker-black">Prefer to reach out directly?</p>
+    <h2>Help us build something Barnegat, and the next generation, can be proud of.</h2>
+    {% include contact-line.html %}
   </div>
 </section>

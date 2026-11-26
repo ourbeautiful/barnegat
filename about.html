@@ -6,74 +6,44 @@ description: "Why Our Beautiful America started, how Barnegat High School studen
 
 <section class="page-hero">
   <div class="container">
-    <p class="eyebrow">About Us</p>
+    <span class="stripes" aria-hidden="true"></span>
+    <p class="kicker">About Us</p>
     <h1>Civic pride. Love of nature. Young leadership.</h1>
-    <p>Our Beautiful Barnegat is the founding chapter of Our Beautiful America, started by Barnegat High School students who refused to wait for a seat at the table.</p>
+    <p class="lede">Our Beautiful Barnegat is the founding chapter of Our Beautiful America, started by Barnegat High School students who refused to wait for a seat at the table.</p>
   </div>
 </section>
 
-<section class="section reveal">
+<section class="section on-paper">
   <div class="container split">
     <div>
-      <p class="eyebrow">The Spark Behind OBA</p>
+      <p class="kicker">The Spark Behind OBA</p>
       <h2>Built for people who were told to wait</h2>
       <p>I grew up loving my community, wanting a hand in shaping it. But when I looked for a seat at the table, my age was the reason I was told to wait.</p>
       <p class="pull-quote">So instead of waiting, I decided to build a table of my own.</p>
     </div>
-    <div class="card card-tan">
-      <h3 style="text-transform:none; font-family: var(--font-body); font-weight:700;">Inspired by visionaries</h3>
+    <div class="panel panel-cedar">
+      <h3>Inspired by visionaries</h3>
       <p>Henry Ford, Walt Disney, and Howard Hughes: American builders who turned bold ideas into lasting institutions. Big dreams just need someone willing to start.</p>
     </div>
   </div>
 </section>
 
-<section class="section on-tan reveal">
+<section class="section">
   <div class="container split split-reverse">
     <div>
-      <p class="eyebrow">{% include icons/paw.svg %} Started at Barnegat High School</p>
+      <p class="kicker">{% include icons/paw.svg %} Started at Barnegat High School</p>
       <h2>Built by students, open to the whole community</h2>
       <p>OBB started with students at Barnegat High School, young people who wanted to do more than watch their town change around them. It's open to anyone ages {{ site.data.site.age_range }}, and parents and older adults are welcome to join too.</p>
       <p>The goal isn't just cleanup events and debate nights. It's teaching real, transferable skills: community service, volunteer work, neighbor and community building, real connections, and leadership, while supporting the local businesses and community that make Barnegat what it is.</p>
     </div>
-    <div class="card">
-      <div class="feature-row">
-        <div class="icon-roundel roundel-tiger" aria-hidden="true">{% include icons/handshake.svg %}</div>
-        <div><strong>Who it's for</strong><p>Ages {{ site.data.site.age_range }}, plus parents and young adults.</p></div>
-      </div>
-      <div class="feature-row">
-        <div class="icon-roundel" aria-hidden="true">{% include icons/idea.svg %}</div>
-        <div><strong>What it builds</strong><p>Leadership, service, and real community connections.</p></div>
-      </div>
-      <div class="feature-row">
-        <div class="icon-roundel roundel-ink" aria-hidden="true">{% include icons/civic.svg %}</div>
-        <div><strong>Who it supports</strong><p>Local businesses and the Barnegat community.</p></div>
+    <div class="panel">
+      <div class="feature-list">
+        <div class="feature-row"><div class="icon tiger" aria-hidden="true">{% include icons/handshake.svg %}</div><div><strong>Who it's for</strong><p>Ages {{ site.data.site.age_range }}, plus parents and young adults.</p></div></div>
+        <div class="feature-row"><div class="icon" aria-hidden="true">{% include icons/idea.svg %}</div><div><strong>What it builds</strong><p>Leadership, service, and real community connections.</p></div></div>
+        <div class="feature-row"><div class="icon cedar" aria-hidden="true">{% include icons/civic.svg %}</div><div><strong>Who it supports</strong><p>Local businesses and the Barnegat community.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section reveal">
-  <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow">Our Mission</p>
-      <h2>Three commitments, one community</h2>
-    </div>
-    <div class="grid grid-3">
-      <div class="card">
-        <div class="icon-roundel" aria-hidden="true">{% include icons/civic.svg %}</div>
-        <h3 style="text-transform:none;">Civic Improvement &amp; Development</h3>
-        <p>Strengthening our infrastructure and building new monuments and amenities.</p>
-      </div>
-      <div class="card">
-        <div class="icon-roundel roundel-tiger" aria-hidden="true">{% include icons/leaf2.svg %}</div>
-        <h3 style="text-transform:none;">Safekeeping the Natural World</h3>
-        <p>Protecting and growing the wild places that make our home beautiful.</p>
-      </div>
-      <div class="card">
-        <div class="icon-roundel roundel-ink" aria-hidden="true">{% include icons/handshake.svg %}</div>
-        <h3 style="text-transform:none;">Youth Leadership &amp; Connection</h3>
-        <p>Giving young people a real seat at the table, and each other.</p>
-      </div>
-    </div>
-  </div>
-</section>
+{% include mission.html %}
